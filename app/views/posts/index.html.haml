@@ -1,8 +1,5 @@
 %h2 REAL Index
 - @posts.each do |post|
-	%a{ href: (url_for [post])}
-		%p= post.title
-		%p= post.description
-	%br
+		%p= link_to post.title, post
 %h2 Add a post
 %button= link_to "New Post", new_post_path

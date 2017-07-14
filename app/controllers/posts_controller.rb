@@ -24,15 +24,18 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post.destroy
-		rendirect_to post_path
+		redirect_to posts_path
 	end
 
 	def edit
 	end
 
 	def update
-		@note.update(post_param)
-		redirect_to @note
+		if @post.update(post_params)
+			redirect_to @post
+		else
+			render 'edit'
+		end
 	end
 
 	private
