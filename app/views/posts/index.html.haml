@@ -1,5 +1,7 @@
 %h2 REAL Index
 - @posts.each do |post|
+		= link_to (image_tag post.image(:small))
+
 		%p= link_to post.title, post
 %h2 Add a post
 %button= link_to "New Post", new_post_path
