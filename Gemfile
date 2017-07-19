@@ -19,6 +19,7 @@ gem 'simple_form', '~> 3.5'
 gem 'paperclip', '~> 5.1'
 gem 'haml', '~> 5.0', '>= 5.0.1'
 gem 'devise', '~> 4.3'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

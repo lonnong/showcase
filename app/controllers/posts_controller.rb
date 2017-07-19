@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show,:destroy,:edit,:update]
+	before_action :find_post, only: [:show,:destroy,:edit,:update,:upvote,:downvote]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def show
@@ -39,6 +39,16 @@ class PostsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def upvote
+		@post.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@post.downvote_by current_user
+		redirect_to :back
 	end
 
 	private
